@@ -1,0 +1,31 @@
+<div class="text-center">
+    <h1>Sign up</h1>
+</div>
+
+<div class="col-sm-6 offset-sm-3">
+    
+  <%= form_with(model: @user, local: true) do |f| %>
+    <%= render 'layouts/error_massages', model: f.objedt %>
+    <div>
+        <%= f.label :name, 'Name' %>
+        <%= f.text_field :name, class: 'form-control' %>
+    </div>
+    
+    <div>
+        <%= f.label :email, 'Email' %>
+        <%= f.text_field :email, class: 'form-control' %>
+    </div>
+      
+    <div>
+        <%= f.label :password, 'Password' %>
+        <%= f.text_field :pasword, class: 'form-control' %>
+    </div> 
+    
+    <div>
+        <%= f.label :password_confirmation, 'Confirmation' %>
+        <%= f.text_field :password_confirmation, class: 'form-control' %>
+    </div>
+    
+    <%= f.submit 'Sign up' %>
+  <% end %>
+ </div> 
