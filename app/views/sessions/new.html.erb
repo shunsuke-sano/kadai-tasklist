@@ -1,11 +1,10 @@
 <div class="text-center">
-    <h1>Sign up</h1>
+    <h1>Log in</h1>
 </div>
 
 <div class="col-sm-6 offset-sm-3">
     
-  <%= form_with(model: @user, local: true) do |f| %>
-    <%= render 'layouts/error_messages', model: f.object %>
+  <%= form_with(url: login_path, scope: :session, local: true) do |f| %>
     <div>
         <%= f.label :name, 'Name' %>
         <%= f.text_field :name, class: 'form-control' %>
@@ -26,6 +25,8 @@
         <%= f.text_field :password_confirmation, class: 'form-control' %>
     </div>
     
-    <%= f.submit 'Sign up' %>
+    <%= f.submit 'Log in' %>
   <% end %>
+  
+  <p>New user? <%= link_to 'Sign up now!', signup_path %></p>
  </div> 
