@@ -1,9 +1,9 @@
 class UsersController < ApplicationController
+  before_action :require_user_logged_in, only: [:index]
+  
+  
   def index
     @users = User.order(id: :desc)
-  end
-
-  def show
   end
 
   def new
